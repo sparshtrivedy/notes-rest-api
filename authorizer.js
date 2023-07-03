@@ -29,8 +29,6 @@ const generatePolicy = (principalId, effect, resource) => {
         foo: "bar"
     }
 
-    console.log(JSON.stringify(authResponse));
-
     return authResponse;
 }
 
