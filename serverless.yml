@@ -86,6 +86,7 @@ functions:
             arn: !GetAtt cognitoUserPool.Arn
 
 plugins:
+  - serverless-plugin-typescript
   - serverless-iam-roles-per-function
 
 # you can add CloudFormation resource templates here
