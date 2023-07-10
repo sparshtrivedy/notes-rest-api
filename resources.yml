@@ -57,25 +57,25 @@ userPoolIdParam:
     Value: !GetAtt cognitoUserPool.Arn
 
 # Cache policy
-restAPICachePolicy:
-  Type: AWS::CloudFront::CachePolicy
-  Properties: 
-    CachePolicyConfig: 
-        DefaultTTL: 300
-        MaxTTL: 31536000
-        MinTTL: 60
-        Name: RestAPICachePolicy
-        ParametersInCacheKeyAndForwardedToOrigin:
-            CookiesConfig: 
-              CookieBehavior: none
-            EnableAcceptEncodingBrotli: true
-            EnableAcceptEncodingGzip: true
-            HeadersConfig: 
-              HeaderBehavior: whitelist
-              Headers: 
-                - Authorization
-            QueryStringsConfig: 
-              QueryStringBehavior: none
+# restAPICachePolicy:
+#   Type: AWS::CloudFront::CachePolicy
+#   Properties: 
+#     CachePolicyConfig: 
+#         DefaultTTL: 300
+#         MaxTTL: 31536000
+#         MinTTL: 60
+#         Name: RestAPICachePolicy
+#         ParametersInCacheKeyAndForwardedToOrigin:
+#             CookiesConfig: 
+#               CookieBehavior: none
+#             EnableAcceptEncodingBrotli: true
+#             EnableAcceptEncodingGzip: true
+#             HeadersConfig: 
+#               HeaderBehavior: whitelist
+#               Headers: 
+#                 - Authorization
+#             QueryStringsConfig: 
+#               QueryStringBehavior: none
 
 # Cloudfront distribution
 # cloudFrontDistribution:
