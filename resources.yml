@@ -78,28 +78,28 @@ restAPICachePolicy:
               QueryStringBehavior: none
 
 # Cloudfront distribution
-cloudFrontDistribution:
-  Type: AWS::CloudFront::Distribution
-  Properties: 
-    DistributionConfig: 
-      Enabled: true
-      DefaultCacheBehavior:
-        TargetOriginId: restAPIOrigin
-        CachePolicyId: !Ref restAPICachePolicy
-        ViewerProtocolPolicy: https-only
-      CacheBehaviors:
-        - PathPattern: /dev/*
-          TargetOriginId: restAPIOrigin
-          CachePolicyId: !Ref restAPICachePolicy
-          ViewerProtocolPolicy: https-only
-      Origins:
-        - Id: restAPIOrigin
-          DomainName: !Join
-            - "."
-            - - !Ref ApiGatewayRestApi
-              - "execute-api"
-              - ${aws:region}
-              - "amazonaws.com"
-          CustomOriginConfig:
-            OriginProtocolPolicy: https-only
+# cloudFrontDistribution:
+#   Type: AWS::CloudFront::Distribution
+#   Properties: 
+#     DistributionConfig: 
+#       Enabled: true
+#       DefaultCacheBehavior:
+#         TargetOriginId: restAPIOrigin
+#         CachePolicyId: !Ref restAPICachePolicy
+#         ViewerProtocolPolicy: https-only
+#       CacheBehaviors:
+#         - PathPattern: /dev/*
+#           TargetOriginId: restAPIOrigin
+#           CachePolicyId: !Ref restAPICachePolicy
+#           ViewerProtocolPolicy: https-only
+#       Origins:
+#         - Id: restAPIOrigin
+#           DomainName: !Join
+#             - "."
+#             - - !Ref ApiGatewayRestApi
+#               - "execute-api"
+#               - ${aws:region}
+#               - "amazonaws.com"
+#           CustomOriginConfig:
+#             OriginProtocolPolicy: https-only
 # WAF enabled in console
